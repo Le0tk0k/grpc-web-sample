@@ -1,1 +1,1 @@
-# gprc sample
+# gRPC sample
