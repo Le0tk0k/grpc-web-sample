@@ -4,7 +4,8 @@ import {HelloRequest} from './hello/hello_pb';
 import {HelloServiceClient} from './hello/HelloServiceClientPb';
 
 function App() {
-  const [name, setName] = useState('world');
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -15,7 +16,7 @@ function App() {
     request.setName(name);
     const client = new HelloServiceClient("http://localhost:8080");
     const response = await client.sayHello(request, {});
-    setName(response.getMessage());
+    setMessage(response.getMessage());
   };
 
   return (
@@ -26,7 +27,7 @@ function App() {
         onChange={onChange}
       />
       <button onClick={onClick}>Send</button>
-      <p>Hello + {name} + !</p>
+      <p>{message}</p>
     </div>
   );
 }
