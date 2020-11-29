@@ -8,7 +8,7 @@
 ## how to start
 
 ```zsh
-$ git clone git@github.com:Le0tk0k/grpc-sample.git
+$ git clone https://github.com/Le0tk0k/grpc-sample
 /client $ yarn start
 /server $ go run main.go
 $ docker-compose up -d
